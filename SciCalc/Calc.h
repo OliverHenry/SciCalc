@@ -580,7 +580,6 @@ namespace SciCalc {
 		Button^ button = (Button^)sender;
 		if (newNumber == false){
 			
-			
 			if (!firstNumber) { // if firstNumber is null
 				firstNumber = Convert::ToDouble(currentNumText->Text); // Takes the numbers inputted converts it to a double and saves it into a variable
 			}
@@ -589,7 +588,7 @@ namespace SciCalc {
 				firstNumber = calc.mathCalc(firstNumber, operation, secondNumber);
 			}
 
-			currentNumText->Text = "0"; // Changes the calculator display back to 0 so the second number can be inputted
+			currentNumText->Text = Convert::ToString(firstNumber); //Update display to show current calculated value
 			historyText->Text = historyText->Text + " " + button->Text;
 			operation = Convert::ToChar(button->Text);
 			newNumber = true;
@@ -760,7 +759,7 @@ namespace SciCalc {
 			break;
 
 		case 'M':
-			Answer = Convert::ToInt32(secondNumber) % 2;
+			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 			currentNumText->Text = System::Convert::ToString(Answer); //Mod
 			break;
 

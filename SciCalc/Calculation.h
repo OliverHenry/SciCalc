@@ -1,13 +1,10 @@
-#include <iostream>
-#include <math.h>
-#include <string>
-
 class Calculation{
 
 public: double mathCalc(double firstNumber, char operation, double secondNumber){
+	
+	using namespace System;
 
 	double Answer;
-	//int Answer;
 
 	switch (operation)
 	{
@@ -55,9 +52,9 @@ public: double mathCalc(double firstNumber, char operation, double secondNumber)
 		Answer = pow(firstNumber, secondNumber);
 		break;
 
-	//case 'M':
-	//	Answer = Convert::ToInt32(secondNumber) % 2;
-	//	break;
+	case 'M':
+		Answer = Convert::ToInt32(secondNumber) % 2;
+		break;
 
 	case '%':
 		Answer = secondNumber * firstNumber / 100;
