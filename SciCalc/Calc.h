@@ -554,9 +554,6 @@ namespace SciCalc {
 			newNumber = false;
 		}
 
-		if (secondNumber){ // if secondNumber is not null
-			firstNumber = calc.mathCalc(firstNumber, operation, secondNumber);
-		}
 	};
 
 	private: System::Void dotButton_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -582,11 +579,14 @@ namespace SciCalc {
 
 		Button^ button = (Button^)sender;
 		if (newNumber == false){
+			
+			
 			if (!firstNumber) { // if firstNumber is null
 				firstNumber = Convert::ToDouble(currentNumText->Text); // Takes the numbers inputted converts it to a double and saves it into a variable
 			}
 			else{
 				secondNumber = Convert::ToDouble(currentNumText->Text); // Takes the numbers inputted converts it to a double and saves it into a variable
+				firstNumber = calc.mathCalc(firstNumber, operation, secondNumber);
 			}
 
 			currentNumText->Text = "0"; // Changes the calculator display back to 0 so the second number can be inputted
@@ -694,7 +694,13 @@ namespace SciCalc {
 
 	private: System::Void equalsButton_Click(System::Object^  sender, System::EventArgs^  e) {
 
-		secondNumber = Convert::ToDouble(currentNumText->Text);
+		try{
+			secondNumber = Convert::ToDouble(currentNumText->Text);
+		}
+		catch (FormatException^ e){
+			currentNumText->Text = "Error";
+		}
+
 //		printf("a");
 		switch (operation)
 		{
