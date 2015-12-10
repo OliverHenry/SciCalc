@@ -532,7 +532,6 @@ namespace SciCalc {
 		double firstNumber;
 		double secondNumber;
 		double Answer;
-		//String stringAnswer;
 		char operation;
 		bool newNumber = true;
 
@@ -540,8 +539,7 @@ namespace SciCalc {
 #pragma endregion
 	private: System::Void numberButton_Click(System::Object^  sender, System::EventArgs^  e) {
 
-
-		if (currentNumText->Text == "0" || newNumber == true){ // If the calculator is showing a 0
+		if (newNumber == true){ // If the calculator is showing a 0
 			Button^ button = (Button^)sender; // Then the text shown on the button pressed is store
 			currentNumText->Text = button->Text;  // Then the 0 is changed to the text that is displayed on the button pressed
 			historyText->Text = historyText->Text + " " + button->Text; // Set the text on the second text box to the text on the button
@@ -568,19 +566,19 @@ namespace SciCalc {
 
 
 	private: System::Void clearButton_Click(System::Object^  sender, System::EventArgs^  e) {
-
-		currentNumText->Text = "0"; // Sets the text back to 0
-		historyText->Text = ""; //clears second textbox
-		firstNumber = 0; // Sets the first number variable back to 0
-		secondNumber = 0; // Sets the second number variable back to 0
-		Answer = 0; // Sets the answer number variable back to 0
+		//Reset values
+		currentNumText->Text = "0";
+		historyText->Text = "";
+		firstNumber = NULL;
+		secondNumber = NULL;
+		Answer = NULL;
 	}
 	private: System::Void operationButton_Click(System::Object^  sender, System::EventArgs^  e) {
 
 		Button^ button = (Button^)sender;
 		if (newNumber == false){
 			
-			if (!firstNumber) { // if firstNumber is null
+			if (firstNumber == NULL) {
 				firstNumber = Convert::ToDouble(currentNumText->Text); // Takes the numbers inputted converts it to a double and saves it into a variable
 			}
 			else{
@@ -589,14 +587,17 @@ namespace SciCalc {
 			}
 
 			currentNumText->Text = Convert::ToString(firstNumber); //Update display to show current calculated value
+			if (historyText->Text->Length == 0){ historyText->Text = historyText->Text + "0"; }
 			historyText->Text = historyText->Text + " " + button->Text;
 			operation = Convert::ToChar(button->Text);
 			newNumber = true;
 		}
 		else{
-			historyText->Text = historyText->Text->Substring(0, historyText->Text->Length-1) + button->Text;
+			if (historyText->Text->Length == 0){ historyText->Text = historyText->Text + "0  "; }
+			historyText->Text = historyText->Text->Substring(0, historyText->Text->Length - 1) + button->Text;
 			operation = Convert::ToChar(button->Text);
 		}
+
 	}
 	private: System::Void SquareRootbutton_Click(System::Object^  sender, System::EventArgs^  e) {
 
@@ -692,97 +693,96 @@ namespace SciCalc {
 
 
 	private: System::Void equalsButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (newNumber == false){
+			try{
+				secondNumber = Convert::ToDouble(currentNumText->Text);
+			}
+			catch (FormatException^ e){
+				currentNumText->Text = "Error";
+			}
 
-		try{
-			secondNumber = Convert::ToDouble(currentNumText->Text);
+			switch (operation)
+			{
+			case '+':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Addition
+				break;
+
+			case '-':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Subtraction
+				break;
+
+			case '*':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Multiplication
+				break;
+
+			case '÷':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Division
+				break;
+
+			case 's':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Square Root
+				break;
+
+			case 'S':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Sin
+				break;
+
+			case 'C':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Cos
+				break;
+
+			case 'T':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Tan
+				break;
+
+			case 'L':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Log
+				break;
+
+			case 'E':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //EXP
+				break;
+
+			case 'P':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Power
+				break;
+
+			case 'M':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Mod
+				break;
+
+			case '%':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Percentage
+				break;
+
+			case 'N':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //ln
+				break;
+
+			case '!':
+				double fact = 1;
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Factorial
+				break;
+			}
+			firstNumber = NULL; //
+			secondNumber = NULL; // Resets the variables so equals cannot continue to be pressed
 		}
-		catch (FormatException^ e){
-			currentNumText->Text = "Error";
-		}
-
-//		printf("a");
-		switch (operation)
-		{
-		case '+':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Addition
-			break;
-
-		case '-':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Subtraction
-			break;
-
-		case '*':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Multiplication
-			break;
-
-		case '÷':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Division
-			break;
-
-		case 's':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Square Root
-			break;
-
-		case 'S':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Sin
-			break;
-
-		case 'C':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Cos
-			break;
-
-		case 'T':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Tan
-			break;
-
-		case 'L':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Log
-			break;
-
-		case 'E':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //EXP
-			break;
-
-		case 'P':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Power
-			break;
-
-		case 'M':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Mod
-			break;
-
-		case '%':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Percentage
-			break;
-
-		case 'N':
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //ln
-			break;
-
-		case '!':
-			double fact = 1;
-			Answer = calc.mathCalc(firstNumber, operation, secondNumber);
-			currentNumText->Text = System::Convert::ToString(Answer); //Factorial
-			break;
-		}
-		firstNumber = 0; //
-		secondNumber = 0; // Resets the variables so equals cannot continue to be pressed
 	}
-
 
 
 
