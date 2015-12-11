@@ -57,7 +57,9 @@ public: double mathCalc(double firstNumber, char operation, double secondNumber)
 		break;
 
 	case '%':
-		Answer = secondNumber * firstNumber / 100;
+		Answer = firstNumber / 100;
+		
+		//Answer = secondNumber * firstNumber / 100;
 		break;
 
 	case 'N':

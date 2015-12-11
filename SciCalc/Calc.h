@@ -134,6 +134,7 @@ namespace SciCalc {
 			this->currentNumText->Location = System::Drawing::Point(12, 33);
 			this->currentNumText->Multiline = true;
 			this->currentNumText->Name = L"currentNumText";
+			this->currentNumText->ReadOnly = true;
 			this->currentNumText->Size = System::Drawing::Size(259, 47);
 			this->currentNumText->TabIndex = 0;
 			this->currentNumText->Text = L"0";
@@ -478,6 +479,7 @@ namespace SciCalc {
 			this->historyText->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->historyText->Location = System::Drawing::Point(12, 17);
 			this->historyText->Name = L"historyText";
+			this->historyText->ReadOnly = true;
 			this->historyText->Size = System::Drawing::Size(259, 20);
 			this->historyText->TabIndex = 30;
 			this->historyText->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
