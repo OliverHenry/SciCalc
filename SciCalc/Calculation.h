@@ -66,6 +66,18 @@ public: double mathCalc(double firstNumber, char operation, double secondNumber)
 		Answer = log(secondNumber);
 		break;
 
+	case 'c':
+		Answer = cbrt(secondNumber);
+		break;
+
+	case 'n':
+		Answer = pow(firstNumber, -secondNumber);
+		break;
+
+	case 'Q':
+		Answer = pow(secondNumber, 2);
+		break;
+
 	case '!':
 		double fact = 1;
 

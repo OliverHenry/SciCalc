@@ -75,6 +75,15 @@ namespace SciCalc {
 	private: System::Windows::Forms::Button^  divideButton;
 	private: System::Windows::Forms::Button^  clearButton;
 	private: System::Windows::Forms::TextBox^  historyText;
+	private: System::Windows::Forms::Button^  button11;
+	private: System::Windows::Forms::Button^  ansButton;
+	private: System::Windows::Forms::Button^  squaredButton;
+
+	private: System::Windows::Forms::Button^  cubeRootButton;
+	private: System::Windows::Forms::Button^  negativePowerButton;
+
+
+
 
 
 
@@ -125,6 +134,11 @@ namespace SciCalc {
 			this->divideButton = (gcnew System::Windows::Forms::Button());
 			this->clearButton = (gcnew System::Windows::Forms::Button());
 			this->historyText = (gcnew System::Windows::Forms::TextBox());
+			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->ansButton = (gcnew System::Windows::Forms::Button());
+			this->squaredButton = (gcnew System::Windows::Forms::Button());
+			this->cubeRootButton = (gcnew System::Windows::Forms::Button());
+			this->negativePowerButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// currentNumText
@@ -144,7 +158,7 @@ namespace SciCalc {
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(12, 181);
+			this->button1->Location = System::Drawing::Point(12, 224);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(47, 37);
 			this->button1->TabIndex = 1;
@@ -156,7 +170,7 @@ namespace SciCalc {
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(65, 181);
+			this->button2->Location = System::Drawing::Point(65, 224);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(47, 37);
 			this->button2->TabIndex = 2;
@@ -168,7 +182,7 @@ namespace SciCalc {
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(118, 181);
+			this->button3->Location = System::Drawing::Point(118, 224);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(47, 37);
 			this->button3->TabIndex = 3;
@@ -180,7 +194,7 @@ namespace SciCalc {
 			// 
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button4->Location = System::Drawing::Point(12, 224);
+			this->button4->Location = System::Drawing::Point(12, 267);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(47, 37);
 			this->button4->TabIndex = 4;
@@ -192,7 +206,7 @@ namespace SciCalc {
 			// 
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(65, 224);
+			this->button5->Location = System::Drawing::Point(65, 267);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(47, 37);
 			this->button5->TabIndex = 5;
@@ -204,7 +218,7 @@ namespace SciCalc {
 			// 
 			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button6->Location = System::Drawing::Point(118, 224);
+			this->button6->Location = System::Drawing::Point(118, 267);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(47, 37);
 			this->button6->TabIndex = 6;
@@ -216,7 +230,7 @@ namespace SciCalc {
 			// 
 			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button7->Location = System::Drawing::Point(12, 267);
+			this->button7->Location = System::Drawing::Point(12, 310);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(47, 37);
 			this->button7->TabIndex = 7;
@@ -228,7 +242,7 @@ namespace SciCalc {
 			// 
 			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button8->Location = System::Drawing::Point(65, 267);
+			this->button8->Location = System::Drawing::Point(65, 310);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(47, 37);
 			this->button8->TabIndex = 8;
@@ -240,7 +254,7 @@ namespace SciCalc {
 			// 
 			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button9->Location = System::Drawing::Point(118, 267);
+			this->button9->Location = System::Drawing::Point(118, 310);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(47, 37);
 			this->button9->TabIndex = 9;
@@ -252,7 +266,7 @@ namespace SciCalc {
 			// 
 			this->button10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button10->Location = System::Drawing::Point(12, 307);
+			this->button10->Location = System::Drawing::Point(12, 353);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(47, 37);
 			this->button10->TabIndex = 10;
@@ -264,7 +278,7 @@ namespace SciCalc {
 			// 
 			this->equalsButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->equalsButton->Location = System::Drawing::Point(171, 310);
+			this->equalsButton->Location = System::Drawing::Point(223, 353);
 			this->equalsButton->Name = L"equalsButton";
 			this->equalsButton->Size = System::Drawing::Size(47, 37);
 			this->equalsButton->TabIndex = 11;
@@ -276,7 +290,7 @@ namespace SciCalc {
 			// 
 			this->operationButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->operationButton->Location = System::Drawing::Point(171, 267);
+			this->operationButton->Location = System::Drawing::Point(171, 310);
 			this->operationButton->Name = L"operationButton";
 			this->operationButton->Size = System::Drawing::Size(47, 37);
 			this->operationButton->TabIndex = 12;
@@ -288,7 +302,7 @@ namespace SciCalc {
 			// 
 			this->minusButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->minusButton->Location = System::Drawing::Point(224, 267);
+			this->minusButton->Location = System::Drawing::Point(223, 310);
 			this->minusButton->Name = L"minusButton";
 			this->minusButton->Size = System::Drawing::Size(47, 37);
 			this->minusButton->TabIndex = 13;
@@ -300,7 +314,7 @@ namespace SciCalc {
 			// 
 			this->timesButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->timesButton->Location = System::Drawing::Point(171, 224);
+			this->timesButton->Location = System::Drawing::Point(171, 267);
 			this->timesButton->Name = L"timesButton";
 			this->timesButton->Size = System::Drawing::Size(47, 37);
 			this->timesButton->TabIndex = 14;
@@ -312,7 +326,7 @@ namespace SciCalc {
 			// 
 			this->SquareRootbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->SquareRootbutton->Location = System::Drawing::Point(12, 132);
+			this->SquareRootbutton->Location = System::Drawing::Point(12, 181);
 			this->SquareRootbutton->Name = L"SquareRootbutton";
 			this->SquareRootbutton->Size = System::Drawing::Size(47, 37);
 			this->SquareRootbutton->TabIndex = 15;
@@ -324,7 +338,7 @@ namespace SciCalc {
 			// 
 			this->dotButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dotButton->Location = System::Drawing::Point(223, 310);
+			this->dotButton->Location = System::Drawing::Point(118, 353);
 			this->dotButton->Name = L"dotButton";
 			this->dotButton->Size = System::Drawing::Size(47, 37);
 			this->dotButton->TabIndex = 16;
@@ -336,7 +350,7 @@ namespace SciCalc {
 			// 
 			this->button17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button17->Location = System::Drawing::Point(65, 132);
+			this->button17->Location = System::Drawing::Point(117, 181);
 			this->button17->Name = L"button17";
 			this->button17->Size = System::Drawing::Size(47, 37);
 			this->button17->TabIndex = 17;
@@ -346,7 +360,9 @@ namespace SciCalc {
 			// 
 			// advancedOperationsButton
 			// 
-			this->advancedOperationsButton->Location = System::Drawing::Point(12, 89);
+			this->advancedOperationsButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->advancedOperationsButton->Location = System::Drawing::Point(12, 95);
 			this->advancedOperationsButton->Name = L"advancedOperationsButton";
 			this->advancedOperationsButton->Size = System::Drawing::Size(47, 37);
 			this->advancedOperationsButton->TabIndex = 18;
@@ -356,7 +372,9 @@ namespace SciCalc {
 			// 
 			// button19
 			// 
-			this->button19->Location = System::Drawing::Point(118, 89);
+			this->button19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button19->Location = System::Drawing::Point(117, 95);
 			this->button19->Name = L"button19";
 			this->button19->Size = System::Drawing::Size(47, 37);
 			this->button19->TabIndex = 19;
@@ -366,7 +384,9 @@ namespace SciCalc {
 			// 
 			// button20
 			// 
-			this->button20->Location = System::Drawing::Point(65, 89);
+			this->button20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button20->Location = System::Drawing::Point(65, 95);
 			this->button20->Name = L"button20";
 			this->button20->Size = System::Drawing::Size(47, 37);
 			this->button20->TabIndex = 20;
@@ -376,7 +396,9 @@ namespace SciCalc {
 			// 
 			// button21
 			// 
-			this->button21->Location = System::Drawing::Point(224, 132);
+			this->button21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button21->Location = System::Drawing::Point(223, 181);
 			this->button21->Name = L"button21";
 			this->button21->Size = System::Drawing::Size(47, 37);
 			this->button21->TabIndex = 21;
@@ -386,9 +408,9 @@ namespace SciCalc {
 			// 
 			// pieButton
 			// 
-			this->pieButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->pieButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->pieButton->Location = System::Drawing::Point(171, 89);
+			this->pieButton->Location = System::Drawing::Point(170, 138);
 			this->pieButton->Name = L"pieButton";
 			this->pieButton->Size = System::Drawing::Size(47, 37);
 			this->pieButton->TabIndex = 22;
@@ -398,9 +420,9 @@ namespace SciCalc {
 			// 
 			// button23
 			// 
-			this->button23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button23->Location = System::Drawing::Point(171, 132);
+			this->button23->Location = System::Drawing::Point(171, 181);
 			this->button23->Name = L"button23";
 			this->button23->Size = System::Drawing::Size(47, 37);
 			this->button23->TabIndex = 23;
@@ -410,9 +432,9 @@ namespace SciCalc {
 			// 
 			// powerButton
 			// 
-			this->powerButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->powerButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->powerButton->Location = System::Drawing::Point(118, 132);
+			this->powerButton->Location = System::Drawing::Point(12, 138);
 			this->powerButton->Name = L"powerButton";
 			this->powerButton->Size = System::Drawing::Size(47, 37);
 			this->powerButton->TabIndex = 24;
@@ -422,7 +444,9 @@ namespace SciCalc {
 			// 
 			// button25
 			// 
-			this->button25->Location = System::Drawing::Point(224, 181);
+			this->button25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button25->Location = System::Drawing::Point(224, 224);
 			this->button25->Name = L"button25";
 			this->button25->Size = System::Drawing::Size(47, 37);
 			this->button25->TabIndex = 25;
@@ -432,7 +456,9 @@ namespace SciCalc {
 			// 
 			// button26
 			// 
-			this->button26->Location = System::Drawing::Point(224, 92);
+			this->button26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button26->Location = System::Drawing::Point(223, 138);
 			this->button26->Name = L"button26";
 			this->button26->Size = System::Drawing::Size(47, 37);
 			this->button26->TabIndex = 26;
@@ -442,7 +468,9 @@ namespace SciCalc {
 			// 
 			// modButton
 			// 
-			this->modButton->Location = System::Drawing::Point(171, 181);
+			this->modButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->modButton->Location = System::Drawing::Point(171, 224);
 			this->modButton->Name = L"modButton";
 			this->modButton->Size = System::Drawing::Size(47, 37);
 			this->modButton->TabIndex = 27;
@@ -454,7 +482,7 @@ namespace SciCalc {
 			// 
 			this->divideButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->divideButton->Location = System::Drawing::Point(224, 224);
+			this->divideButton->Location = System::Drawing::Point(223, 267);
 			this->divideButton->Name = L"divideButton";
 			this->divideButton->Size = System::Drawing::Size(47, 37);
 			this->divideButton->TabIndex = 28;
@@ -466,7 +494,7 @@ namespace SciCalc {
 			// 
 			this->clearButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->clearButton->Location = System::Drawing::Point(65, 310);
+			this->clearButton->Location = System::Drawing::Point(170, 95);
 			this->clearButton->Name = L"clearButton";
 			this->clearButton->Size = System::Drawing::Size(100, 37);
 			this->clearButton->TabIndex = 29;
@@ -484,12 +512,77 @@ namespace SciCalc {
 			this->historyText->TabIndex = 30;
 			this->historyText->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
+			// button11
+			// 
+			this->button11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button11->Location = System::Drawing::Point(65, 353);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(47, 37);
+			this->button11->TabIndex = 31;
+			this->button11->Text = L"00";
+			this->button11->UseVisualStyleBackColor = true;
+			this->button11->Click += gcnew System::EventHandler(this, &Calc::numberButton_Click);
+			// 
+			// ansButton
+			// 
+			this->ansButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ansButton->Location = System::Drawing::Point(170, 353);
+			this->ansButton->Name = L"ansButton";
+			this->ansButton->Size = System::Drawing::Size(47, 37);
+			this->ansButton->TabIndex = 32;
+			this->ansButton->Text = L"Ans";
+			this->ansButton->UseVisualStyleBackColor = true;
+			this->ansButton->Click += gcnew System::EventHandler(this, &Calc::ansButton_Click);
+			// 
+			// squaredButton
+			// 
+			this->squaredButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->squaredButton->Location = System::Drawing::Point(118, 138);
+			this->squaredButton->Name = L"squaredButton";
+			this->squaredButton->Size = System::Drawing::Size(47, 37);
+			this->squaredButton->TabIndex = 33;
+			this->squaredButton->Text = L"x^2";
+			this->squaredButton->UseVisualStyleBackColor = true;
+			this->squaredButton->Click += gcnew System::EventHandler(this, &Calc::squaredButton_Click);
+			// 
+			// cubeRootButton
+			// 
+			this->cubeRootButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cubeRootButton->Location = System::Drawing::Point(65, 181);
+			this->cubeRootButton->Name = L"cubeRootButton";
+			this->cubeRootButton->Size = System::Drawing::Size(47, 37);
+			this->cubeRootButton->TabIndex = 34;
+			this->cubeRootButton->Text = L"3√";
+			this->cubeRootButton->UseVisualStyleBackColor = true;
+			this->cubeRootButton->Click += gcnew System::EventHandler(this, &Calc::cubeRootButton_Click);
+			// 
+			// negativePowerButton
+			// 
+			this->negativePowerButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->negativePowerButton->Location = System::Drawing::Point(65, 138);
+			this->negativePowerButton->Name = L"negativePowerButton";
+			this->negativePowerButton->Size = System::Drawing::Size(47, 37);
+			this->negativePowerButton->TabIndex = 35;
+			this->negativePowerButton->Text = L"x^-y";
+			this->negativePowerButton->UseVisualStyleBackColor = true;
+			this->negativePowerButton->Click += gcnew System::EventHandler(this, &Calc::negativePowerButton_Click);
+			// 
 			// Calc
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(282, 352);
+			this->ClientSize = System::Drawing::Size(282, 392);
+			this->Controls->Add(this->negativePowerButton);
+			this->Controls->Add(this->cubeRootButton);
+			this->Controls->Add(this->squaredButton);
+			this->Controls->Add(this->ansButton);
+			this->Controls->Add(this->button11);
 			this->Controls->Add(this->historyText);
 			this->Controls->Add(this->clearButton);
 			this->Controls->Add(this->divideButton);
@@ -534,6 +627,7 @@ namespace SciCalc {
 		double firstNumber;
 		double secondNumber;
 		double Answer;
+		double storedAnswer;
 		char operation;
 		bool newNumber = true;
 
@@ -574,6 +668,7 @@ namespace SciCalc {
 		firstNumber = NULL;
 		secondNumber = NULL;
 		Answer = NULL;
+		newNumber = true;
 	}
 	private: System::Void operationButton_Click(System::Object^  sender, System::EventArgs^  e) {
 
@@ -609,11 +704,7 @@ namespace SciCalc {
 			historyText->Text = historyText->Text + button->Text;
 			operation = 's';
 		}
-		else{
-			Button^ button = (Button^)sender;
-			historyText->Text = historyText->Text + button->Text;
-			operation = 's';
-		}
+
 	}
 
 	private: System::Void pieButton_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -693,6 +784,44 @@ namespace SciCalc {
 
 	}
 
+	private: System::Void ansButton_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			Button^ button = (Button^)sender;
+			currentNumText->Text = System::Convert::ToString(storedAnswer);
+			historyText->Text = historyText->Text + button->Text;
+			newNumber = true;
+	
+	}
+	private: System::Void cubeRootButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (currentNumText->Text == "0"){
+			Button^ button = (Button^)sender;
+			currentNumText->Text = "";
+			historyText->Text = historyText->Text + button->Text;
+			operation = 'c';
+		}
+
+			 }
+
+	private: System::Void negativePowerButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (newNumber == false){
+			firstNumber = Convert::ToDouble(currentNumText->Text);
+			currentNumText->Text = "";
+			historyText->Text = historyText->Text + "^-";
+			operation = 'n';
+			newNumber = true;
+		}
+	}
+
+	private: System::Void squaredButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (newNumber == false)
+		{
+			historyText->Text = historyText->Text + "^2";
+			operation = 'Q';
+			newNumber = false;
+		}
+	}
+
+
 
 	private: System::Void equalsButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (newNumber == false){
@@ -708,83 +837,121 @@ namespace SciCalc {
 			case '+':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Addition
+				storedAnswer = Answer;
 				break;
 
 			case '-':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Subtraction
+				storedAnswer = Answer;
 				break;
 
 			case '*':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Multiplication
+				storedAnswer = Answer;
 				break;
 
 			case '÷':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Division
+				storedAnswer = Answer;
 				break;
 
 			case 's':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Square Root
+				storedAnswer = Answer;
 				break;
 
 			case 'S':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Sin
+				storedAnswer = Answer;
 				break;
 
 			case 'C':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Cos
+				storedAnswer = Answer;
 				break;
 
 			case 'T':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Tan
+				storedAnswer = Answer;
 				break;
 
 			case 'L':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Log
+				storedAnswer = Answer;
 				break;
 
 			case 'E':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //EXP
+				storedAnswer = Answer;
 				break;
 
 			case 'P':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Power
+				storedAnswer = Answer;
 				break;
 
 			case 'M':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Mod
+				storedAnswer = Answer;
 				break;
 
 			case '%':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Percentage
+				storedAnswer = Answer;
 				break;
 
 			case 'N':
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //ln
+				storedAnswer = Answer;
+				break;
+
+			case 'c':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Cube root
+				storedAnswer = Answer;
+				break;
+
+			case 'n':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Negative Power
+				storedAnswer = Answer;
+				break;
+
+			case 'Q':
+				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
+				currentNumText->Text = System::Convert::ToString(Answer); //Squared
+				storedAnswer = Answer;
 				break;
 
 			case '!':
 				double fact = 1;
 				Answer = calc.mathCalc(firstNumber, operation, secondNumber);
 				currentNumText->Text = System::Convert::ToString(Answer); //Factorial
+				storedAnswer = Answer;
 				break;
 			}
 			firstNumber = NULL; //
 			secondNumber = NULL; // Resets the variables so equals cannot continue to be pressed
 		}
 	}
+
+
+
+
+
 
 
 
