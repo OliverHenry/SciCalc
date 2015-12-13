@@ -789,7 +789,7 @@ namespace SciCalc {
 			Button^ button = (Button^)sender;
 			currentNumText->Text = System::Convert::ToString(storedAnswer);
 			historyText->Text = historyText->Text + button->Text;
-			newNumber = true;
+			newNumber = false;
 	
 	}
 	private: System::Void cubeRootButton_Click(System::Object^  sender, System::EventArgs^  e) {
